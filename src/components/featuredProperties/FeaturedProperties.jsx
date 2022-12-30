@@ -4,7 +4,7 @@ import { ListItemSecondaryAction } from "@mui/material";
 
 const FeaturedProperties = () => {
 
-  const {data,loading,error}=useFetch("/hotels?featured=true&limit=4")
+  const {data,loading,error}=useFetch("https://hotel-booking-backend-72a2.onrender.com/api/hotels?featured=true&limit=4")
   console.log(data)
   const datas=data;
   return (

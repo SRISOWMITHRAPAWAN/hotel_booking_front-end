@@ -6,11 +6,12 @@ const FeaturedProperties = () => {
 
   const {data,loading,error}=useFetch("/hotels?featured=true&limit=4")
   console.log(data)
+  const datas=data;
   return (
     <div className="fp">
       {loading ? ("Loading") : (
       <>
-     {data.map((item)=>(
+     {datas.map((item)=>(
 
       <div className="fpItem" key={item._id}>
         <img

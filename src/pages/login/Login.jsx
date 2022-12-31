@@ -34,6 +34,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="lContainer">
+        <div style={{color:"white"}}>LOGIN</div>
         <input
           type="text"
           placeholder="username"
@@ -52,6 +53,13 @@ const Login = () => {
           Login
         </button>
         {error && <span>{error.message}</span>}
+        <div style={{color:"white",fontStyle:"italic",fontWeight:"lighter!important"}}>
+          <h1>ForTesting</h1>
+          <div>
+            <h3>username:john1</h3>
+           <h3>password:12345</h3> 
+          </div>
+        </div>
       </div>
     </div>
   );

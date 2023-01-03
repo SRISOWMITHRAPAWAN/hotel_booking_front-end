@@ -25,7 +25,8 @@ const Hotel = () => {
   const [openModal, setOpenModal] = useState(false);
 
   const {data,loading,error}=useFetch(`https://hotel-booking-backend-72a2.onrender.com/api/hotels/find/${id}`)
-const {user} =useContext(AuthContext);
+
+  const {user} =useContext(AuthContext);
 const navigate =useNavigate()
 
 const {dates,options}=useContext(searchContext);

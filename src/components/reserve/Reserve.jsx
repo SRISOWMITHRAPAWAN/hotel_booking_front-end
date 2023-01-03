@@ -7,12 +7,13 @@ import { useContext, useState } from "react";
 import { searchContext } from "../../context/SearchContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import StripeCheckout from "react-stripe-checkout";
 
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
   const { data, loading, error } = useFetch(`https://hotel-booking-backend-72a2.onrender.com/api/hotels/room/${hotelId}`);
   const { dates } = useContext(searchContext);
-
+console.log(data)
   const getDatesInRange = (startDate, endDate) => {
     const start = new Date(startDate);
     const end = new Date(endDate);
@@ -62,7 +63,7 @@ const Reserve = ({ setOpen, hotelId }) => {
         })
       );
       setOpen(false);
-      navigate("/");
+      navigate(`/payment/hotels/${hotelId}`);
     } catch (err) {}
   };
   return (
@@ -102,6 +103,7 @@ const Reserve = ({ setOpen, hotelId }) => {
         <button onClick={handleClick} className="rButton">
           Reserve Now!
         </button>
+       
       </div>
     </div>
   );
